@@ -1,7 +1,6 @@
 html {  
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -19,8 +18,7 @@ html {
    background-color: #4056A1;
    height: 120px;
    display: flex;
-   justify-content: space-between;
-   /* width: viewport; */  
+   justify-content: space-between;  
   
 }
 
