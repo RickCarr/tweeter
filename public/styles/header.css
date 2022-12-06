@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  margin-top: 120px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro', san-serif;
+  color: #FFFFFF;
+  background-color: black;
+  background-image: url('./foggy-birds.png')
+
+  ;
+}
+.name {
+  font-size: 40px;
+  font-family: 'Source Sans Pro', san-serif;
+  color: #FFFFFF;
+}

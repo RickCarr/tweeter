@@ -1,0 +1,50 @@
+html {  
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+ nav {
+   position: fixed;
+   width: 100%;
+   font-family: 'Source Sans Pro', san-serif;
+   color: #FFFFFF;
+   background-color: #4056A1;
+   height: 120px;
+   display: flex;
+   justify-content: space-between;
+   /* width: viewport; */  
+  
+}
+
+.writeTweet {    
+  font-size: 25px;
+  margin: 1.5em
+  
+}
+.fa-solid {
+  color: red;
+  display: flex;
+  margin-top: 5px;
+  margin-left: 80px;  
+}
+
+span {
+  font-family: 'Bungee', sans-serif;
+  
+}
+
+.logo {
+  height: 120px;
+  margin-top: 60px;
+  margin-left: 30px;  
+  font-size: 40px;
+ 
+}

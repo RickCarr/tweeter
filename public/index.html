@@ -3,15 +3,20 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+    
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -20,10 +25,46 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
-    </nav>
+      <span class="logo">Tweeter</span>
 
+      <div class="writeTweet"><b>Write</b> a new tweet
+      <i class="fa-solid fa-angles-down"></i>
+    </div>
+    </nav>
+    <!-- <a>this is anchor</a>
+    <em>this is em?</em>
+    <strong>this is strong</strong> -->
+    <header>
+      <div>
+        <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div class ="name">
+        <b>Firstname</b> Lastname
+      </div>
+    </header>
+    
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method='POST' action="/tweets/">
+          <label for="tweet-text"></label>
+          <textarea name="text" id="tweet-text" placeholder="What you chirp'n about?"></textarea>
+          <div>
+            <button class='tweetButton' type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <!-- <div>
+      <h1>asfdhaslkdfj lkjlk fjasdklfjaslk fjasdlk fjasdlk fjasdflk jasdfl asd jflas djf sdalkfjas dklfjasdlkfja sdlkfja sdlkfjs adlkfj asdlkfjasd lkf jasdflkasjdfk asdjflk sajdf lkasdfjsl adkfjs adlkfj sadlkfjsd lkfjs adflkj</h1>
+      <h2>asfdhas lkdfjlkjlkf jasdklfjas lkfjasdlkfj asdlkfjasdf lkjasdf lkasdjf</h2>
+      </div>
+      <p>sfdhaslk dfjlkjlkfja sdklfjaslkf jasdlkfjasdlkfjasdflkjasd flkasdjflasdjfsdalkfjasd klfjasdlkfjasdl kfjasdlkfjsadlkfjas dlkfjasdlkfjasdflkasjdflkasdj flksajdflkasdfjsladkfjsadl klasdfkljaslf  lsakjd flksa saop jaslkf jsf;lskf askjhlksdafj ;lsafsafhasklfh jasdflka sdjf l asdjfsdalk f ja sd k lfjasdlkfja askldfj ;sd f; sdfnlkae rtuerhioewqro</p>     -->
+    </main>
+    <footer>
+      <br>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,60 @@
+
+.tweetButton {
+font-family: 'Bungee', sans-serif;
+color: #FFFFFF;
+background-color: #4056A1;
+}
+
+#tweet-text { 
+  /* box-sizing: border-box; */
+  padding: 0;
+  width: 100%;
+  resize: none;  
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 5px;
+  border-color: black;
+  border-style: groove;
+  background-color: #FFFFFF;
+}
+.counter {
+  float: right;
+  /* font-weight: bold; */
+  font-family: 'Bungee', sans-serif;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const counter = document.getElementById('counter')
+const button = window.document.getElementById('btn')
+let num = 0;
+button.addEventListener('click', () => {
+   num++;
+   counter.innerHTML = num;
+}) */
+
+/* $('area').on('keydown', () => { */
+  /* arrows are too thick for 'this' */
+/* }) */
