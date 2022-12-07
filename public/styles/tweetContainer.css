@@ -23,21 +23,22 @@ article:hover {
   /* padding: 20px; */
 }
 
-article span {}
-
-
 #content {
   font-weight: bold;
   font-size: 30px;
   padding: 20px;
   border-bottom: 5px solid black;
 }
-
+#handle {
+  font-weight: bold;
+  color: #9dafea;
+  font-size: 23px;
+}
 
 
 .header span {
   display: flex;
-  align-items: center;
+  align-items: center;  
 }
 
 #activity {
