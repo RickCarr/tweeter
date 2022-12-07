@@ -27,17 +27,17 @@ html {
   margin: 1.5em
   
 }
-.fa-solid {
+.writeTweet .fa-solid {
   color: red;
   display: flex;
   margin-top: 5px;
   margin-left: 80px;  
 }
 
-span {
+/* span {
   font-family: 'Bungee', sans-serif;
   
-}
+} */
 
 .logo {
   height: 120px;
