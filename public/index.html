@@ -6,6 +6,7 @@
   <title>Tweeter - Home Page</title>
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
   <!-- External CSS -->
@@ -29,8 +30,7 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <script type="text/javascript" src="/routes/tweets.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>  
 </head>
 
 <body>
@@ -42,10 +42,7 @@
       <i class="fa-solid fa-angles-down"></i>
     </div>
   </nav>
-  <!-- <a>this is anchor</a>
-    <em>this is em?</em>
-    <strong>this is strong</strong> -->
-  <header>
+  <header class="header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -59,7 +56,7 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form method='POST' action="/tweets/">
+      <form id="composeTweet">
         <label for="tweet-text"></label>
         <textarea name="text" id="tweet-text" placeholder="What you chirp'n about?"></textarea>
         <div>
@@ -68,33 +65,7 @@
         </div>
       </form>
     </section>
-    <section class="tweetContainer">
-      <article>
-        <span class="header">
-          <span>
-            <img height='100px' width='100px' src="/images/isaac.png">
-            <span id="name">Cool-man Newt</span>
-          </span>
-          <span id="handle">@SirIsaac</span>
-        </span>
-        <div id="content">
-          If I have seen further it is with this reflecting telescope I made.
-        </div>
-        <div id="activity">
-          <span>347 years ago</span>
-          <div id="icons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </div>
-      </article>
-    </section>
-    <!-- <div>
-      <h1>asfdhaslkdfj lkjlk fjasdklfjaslk fjasdlk fjasdlk fjasdflk jasdfl asd jflas djf sdalkfjas dklfjasdlkfja sdlkfja sdlkfjs adlkfj asdlkfjasd lkf jasdflkasjdfk asdjflk sajdf lkasdfjsl adkfjs adlkfj sadlkfjsd lkfjs adflkj</h1>
-      <h2>asfdhas lkdfjlkjlkf jasdklfjas lkfjasdlkfj asdlkfjasdf lkjasdf lkasdjf</h2>
-      </div>
-      <p>sfdhaslk dfjlkjlkfja sdklfjaslkf jasdlkfjasdlkfjasdflkjasd flkasdjflasdjfsdalkfjasd klfjasdlkfjasdl kfjasdlkfjsadlkfjas dlkfjasdlkfjasdflkasjdflkasdj flksajdflkasdfjsladkfjsadl klasdfkljaslf  lsakjd flksa saop jaslkf jsf;lskf askjhlksdafj ;lsafsafhasklfh jasdflka sdjf l asdjfsdalk f ja sd k lfjasdlkfja askldfj ;sd f; sdfnlkae rtuerhioewqro</p>     -->
+    <section class="tweetContainer"></section>    
   </main>
   <footer>
     <br>

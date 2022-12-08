@@ -34,12 +34,9 @@ html {
   margin-left: 80px;  
 }
 
-/* span {
-  font-family: 'Bungee', sans-serif;
-  
-} */
 
 .logo {
+  font-family: 'Bungee', sans-serif;
   height: 120px;
   margin-top: 60px;
   margin-left: 30px;  

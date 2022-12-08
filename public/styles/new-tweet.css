@@ -4,6 +4,9 @@ font-family: 'Bungee', sans-serif;
 color: #FFFFFF;
 background-color: #4056A1;
 }
+.tweetButton:hover {
+  box-shadow: 4px 4px 4px #4056A1;
+}
 
 #tweet-text { 
   /* box-sizing: border-box; */
