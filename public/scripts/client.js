@@ -1,8 +1,3 @@
-/*
-* Client-side JS logic goes here
-* jQuery is already loaded
-* Reminder: Use (and do all your DOM work in) jQuery's document ready function
-*/
 $(() => {
   const $tweetSection = $('.tweetContainer');
 
@@ -13,6 +8,12 @@ $(() => {
       $tweetSection.prepend($userTweet); // takes return value and appends it to the tweets container            
     }
   };
+  const escape = (str) => {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //create tweet function
   const createTweetElement = (tweetData) => {
     const $tweet = $(`
@@ -24,7 +25,7 @@ $(() => {
           </span>
           <p class="handle">${tweetData.user.handle}</p>
         </header>
-        <div id="content">${tweetData.content.text}</div>
+      <div id="content">${escape(tweetData.content.text)}</div>
         <footer>
           <span>${timeago.format(tweetData.created_at)}</span>
           <div id="icons">
@@ -37,9 +38,7 @@ $(() => {
     `);
     return $tweet;
   };
-  // renderTweets(data);  //initiates renderTweets to go through the database
 
-  //submit listener
   const $chirp = $('#composeTweet');
   $chirp.submit((event) => {
     event.preventDefault();
@@ -58,7 +57,7 @@ $(() => {
   });
   const loadTweets = () => {
     $.get('/tweets', (tweets) => {
-      renderTweets(tweets);           
+      renderTweets(tweets);
     });
   };
   // $.ajax({ 
