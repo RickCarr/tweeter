@@ -1,6 +1,5 @@
 .header {
   display: flex;
-  height: 400px;
   width: 100%;
   margin-top: 120px;
   flex-direction: column;
@@ -9,12 +8,28 @@
   font-family: 'Source Sans Pro', san-serif;
   color: #FFFFFF;
   background-color: black;
-  background-image: url('./foggy-birds.png')
+  background-image: url('../images/foggy-birds.png');
+}
+.header div img{
+  margin-top: 20px;
 
-  ;
 }
 .yourName {
-  font-size: 40px;
+  font-size: 25px;
   font-family: 'Source Sans Pro', san-serif;
   color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    width: 40vw;
+    height: 350px;
+    margin: 200px 5vw;
+  }
+
+  .yourName {
+    font-family: 'Source Sans Pro', san-serif;
+    color: #FFFFFF;
+  }
 }

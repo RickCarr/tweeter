@@ -6,24 +6,24 @@
   font-family: 'Source Sans Pro', san-serif;
   border: 5px solid black;
   padding: 2%;
-  margin: 2%;
-  
+  margin: 2%;  
 }
+
 .tweet:hover {
   box-shadow: 8px 8px 8px #4056A1;
-} 
+}
 
 .tweet header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  /* padding: 20px; */
+  justify-content: space-between;  
 }
 
 .tweet header span {
   display: flex;
-  align-items: center;  
+  align-items: center;
+  font-size: 18px;
 }
 
 #content {
@@ -33,19 +33,17 @@
   border-bottom: 5px solid black;
   word-wrap: break-word;
 }
+
 .handle {
   font-weight: bold;
   color: #9dafea;
-  font-size: 23px;
+  font-size: 15px;
 }
-
-
 
 .tweet footer {
   align-items: center;
   font-size: 15px;
-  font-weight: bold;
-  /* not spreading full width */
+  font-weight: bold;  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -55,7 +53,6 @@
 #icons {
   display: flex;
   flex-direction: row;
-
 }
 
 #icons :hover {
@@ -66,4 +63,9 @@
   padding: 5px;
 }
 
-
+@media screen and (min-width: 768px) {
+  .container {
+    margin-right: 5vw;
+    margin-top: 120px;
+  }
+}

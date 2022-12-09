@@ -1,26 +1,25 @@
 $(() => {
-  const $tweetSection = $('.tweetContainer');
 
-  const renderTweets = (tweets) => {  //tweets == data of database
+  const renderTweets = (tweets) => {
+    const $tweetSection = $('.tweetContainer');
     $tweetSection.empty();
-    for (let tweet of tweets) { //loops through each user in database
-      const $userTweet = createTweetElement(tweet); //makes new user with $user jquery var
-      $tweetSection.prepend($userTweet); // takes return value and appends it to the tweets container
+    for (let tweet of tweets) {
+      const $userTweet = createTweetElement(tweet);
+      $tweetSection.prepend($userTweet);
     }
   };
-  const escape = (str) => {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
 
-  //create tweet function
   const createTweetElement = (tweetData) => {
+    const escape = (str) => {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
     const $tweet = $(`
       <article class="tweet">
         <header>
           <span>            
-            <img height='100px' width='100px' src="${tweetData.user.avatars}">
+            <img height='80px' width='80px' src="${tweetData.user.avatars}">
             <p class="userName">${tweetData.user.name}</p>
           </span>
           <p class="handle">${tweetData.user.handle}</p>
@@ -40,13 +39,13 @@ $(() => {
   };
 
   const $chirp = $('#composeTweet');
-  const error = $('#error');
   $chirp.submit((event) => {
+    const error = $('#error');
     event.preventDefault();
     const chirpMsg = $('#tweet-text').val().trim();
     if (!chirpMsg) {
       error.addClass("error");
-      error.text(" ⚠ If you ain't typing, you ain't chirp'n! ⚠");
+      error.text(" ⚠ If you ain't typing, you ain't chirp'n! ⚠ ");
       return error.slideDown();
     }
     if (chirpMsg.length > 140) {
@@ -56,7 +55,6 @@ $(() => {
     } else {
       error.slideUp();
     }
-
     $.post('/tweets', $chirp.serialize(), (response) => {
       loadTweets(response);
       $('#tweet-text').val("");
@@ -68,15 +66,5 @@ $(() => {
       renderTweets(tweets);
     });
   };
-  // $.ajax({
-  //   method: 'POST',
-  //   url: '/tweets',
-  //   data: $('#tweetForm').serialize()
-  // })
-  // .then
 
-
-
-}); //end of jQuery doc ready f
-
-//***to use jquert to pull data from outside this file after we remove database***
+}); 

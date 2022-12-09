@@ -14,36 +14,34 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-/* nav {
-font-family: 'Bungee', sans-serif;
- }
-  */
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Source Sans Pro', san-serif;
-  color: #FFFFFF; 
+  font-family: 'Source Sans Pro', 'san-serif';
+  color: #FFFFFF;
   background-color: #4056A1;
-  background-image: url('./foggy-birds.png');
+  background-image: url('../images/foggy-birds.png');
   font-size: 24px;
 }
+
 footer br {
- color: #FFFFFF; 
+ color: #FFFFFF;
   background-color: #4056A1;
-  background-image: url('./foggy-birds.png');
+  background-image: url('../images/foggy-birds.png');
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-main {  
-/* display: flex; */
+main {
 align-self: center;
 flex-wrap: wrap;
 width: 90%;
 color: #4056A1;
-background-color:  #FFFFFF;
+background-color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

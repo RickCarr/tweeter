@@ -1,18 +1,18 @@
-
 .tweetButton {
 font-family: 'Bungee', sans-serif;
 color: #FFFFFF;
 background-color: #4056A1;
 }
+
 .tweetButton:hover {
   box-shadow: 4px 4px 4px #4056A1;
 }
 
-#tweet-text { 
-  /* box-sizing: border-box; */
+#tweet-text {
+  box-sizing: border-box;
   padding: 0;
   width: 100%;
-  resize: none;  
+  resize: none;
   border-top-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
@@ -21,27 +21,31 @@ background-color: #4056A1;
   border-style: groove;
   background-color: #FFFFFF;
 }
+
 .counter {
   float: right;
-  /* font-weight: bold; */
-  font-family: 'Bungee', sans-serif;  
+  font-family: 'Bungee', sans-serif;
 }
+
 .turningRed {
   color: crimson;
-  }
+}
 
 .errorContainer {
 display: flex;
 justify-content: center;
 }
+
 textarea:focus {
   outline: none;
-} 
-#error {  
+}
+
+#error {
   display: none;
   align-self: center;
   justify-self: center;
 }
+
 .error {
   display: flex;
   position: relative;
@@ -50,11 +54,14 @@ textarea:focus {
   align-items: center;
   font-weight:100;
   color:crimson;
-  /* background-color: rgb(215, 81, 108); */
   border-color: crimson;
-  border-style: groove;  
-  
+  border-style: groove;
   box-shadow : 4px 4px 4px black;
 }
 
-
+@media screen and (min-width: 768px) {
+  .container {
+    margin-right: 5vw;
+    margin-top: -240px;
+  }
+}
