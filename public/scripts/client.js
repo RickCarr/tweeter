@@ -4,8 +4,8 @@ $(() => {
   const renderTweets = (tweets) => {  //tweets == data of database
     $tweetSection.empty();
     for (let tweet of tweets) { //loops through each user in database
-      const $userTweet = createTweetElement(tweet); //makes new user with $user jquery var       
-      $tweetSection.prepend($userTweet); // takes return value and appends it to the tweets container            
+      const $userTweet = createTweetElement(tweet); //makes new user with $user jquery var
+      $tweetSection.prepend($userTweet); // takes return value and appends it to the tweets container
     }
   };
   const escape = (str) => {
@@ -40,19 +40,27 @@ $(() => {
   };
 
   const $chirp = $('#composeTweet');
+  const error = $('#error');
   $chirp.submit((event) => {
     event.preventDefault();
     const chirpMsg = $('#tweet-text').val().trim();
     if (!chirpMsg) {
-      return alert("If you ain't typing, you ain't chirp'n!  (type something)");
-    } else {
-      if (chirpMsg.length > 140) {
-        return alert('Whoa there, Kanye! Please keep your rant below 140 characters. 👌');
-      }
+      error.addClass("error");
+      error.text(" ⚠ If you ain't typing, you ain't chirp'n! ⚠");
+      return error.slideDown();
     }
+    if (chirpMsg.length > 140) {
+      error.addClass("error");
+      error.text(" ⚠ Whoa there, Kanye! Please keep your rant below 140 characters. ⚠ ");
+      return error.slideDown();
+    } else {
+      error.slideUp();
+    }
+
     $.post('/tweets', $chirp.serialize(), (response) => {
       loadTweets(response);
       $('#tweet-text').val("");
+      $('.counter').text(140);
     });
   });
   const loadTweets = () => {
@@ -60,9 +68,9 @@ $(() => {
       renderTweets(tweets);
     });
   };
-  // $.ajax({ 
-  //   method: 'POST', 
-  //   url: '/tweets', 
+  // $.ajax({
+  //   method: 'POST',
+  //   url: '/tweets',
   //   data: $('#tweetForm').serialize()
   // })
   // .then
@@ -71,4 +79,4 @@ $(() => {
 
 }); //end of jQuery doc ready f
 
-  //***to use jquert to pull data from outside this file after we remove database***
+//***to use jquert to pull data from outside this file after we remove database***

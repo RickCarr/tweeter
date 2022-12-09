@@ -1,7 +1,8 @@
-$(document).ready(function() {
+$(() => {
   $('#tweet-text').on('keyup', function() {
+    let count = $('.counter');
     let newCount = 140 - $(this).val().length;
-    $('.counter').text(newCount);
-    (newCount < 0) ? $('.counter').addClass("turningRed") : $('.counter').removeClass("turningRed");
+    count.text(newCount);
+    (newCount < 0) ? count.addClass("turningRed") : count.removeClass("turningRed");
   });
 });

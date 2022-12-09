@@ -27,5 +27,34 @@ background-color: #4056A1;
   font-family: 'Bungee', sans-serif;  
 }
 .turningRed {
-  color: red;
+  color: crimson;
+  }
+
+.errorContainer {
+display: flex;
+justify-content: center;
 }
+textarea:focus {
+  outline: none;
+} 
+#error {  
+  display: none;
+  align-self: center;
+  justify-self: center;
+}
+.error {
+  display: flex;
+  position: relative;
+  width:fit-content;
+  justify-content: center;
+  align-items: center;
+  font-weight:100;
+  color:crimson;
+  /* background-color: rgb(215, 81, 108); */
+  border-color: crimson;
+  border-style: groove;  
+  
+  box-shadow : 4px 4px 4px black;
+}
+
+
