@@ -1,21 +1,11 @@
-$(() => {
-
-  const renderTweets = (tweets) => {
-    const $tweetSection = $('.tweetContainer');
-    $tweetSection.empty();
-    for (let tweet of tweets) {
-      const $userTweet = createTweetElement(tweet);
-      $tweetSection.prepend($userTweet);
-    }
+const createTweetElement = (tweetData) => {  
+  const escape = (str) => {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   };
 
-  const createTweetElement = (tweetData) => {
-    const escape = (str) => {
-      let div = document.createElement("div");
-      div.appendChild(document.createTextNode(str));
-      return div.innerHTML;
-    };
-    const $tweet = $(`
+  const $tweet = $(`
       <article class="tweet">
         <header>
           <span>            
@@ -24,20 +14,38 @@ $(() => {
           </span>
           <p class="handle">${tweetData.user.handle}</p>
         </header>
-      <div id="content">${escape(tweetData.content.text)}</div>
+        <div id="content">${escape(tweetData.content.text)}</div>
         <footer>
-          <span>${timeago.format(tweetData.created_at)}</span>
-          <div id="icons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
+        <span>${timeago.format(tweetData.created_at)}</span>
+        <div id="icons">
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
             <i class="fa-solid fa-heart"></i>
           </div>
         </footer>
       </article>
-    `);
-    return $tweet;
-  };
+      `);
 
+  return $tweet;
+};
+
+const renderTweets = (tweets) => {
+  const $tweetSection = $('.tweetContainer');
+  $tweetSection.empty();
+  for (let tweet of tweets) {
+    const $userTweet = createTweetElement(tweet);
+    $tweetSection.prepend($userTweet);
+  }
+};
+
+const loadTweets = () => {
+  $.get('/tweets', (tweets) => {
+    renderTweets(tweets);
+  });
+};
+
+$(() => {
+  loadTweets();
   const $chirp = $('#composeTweet');
   $chirp.submit((event) => {
     const error = $('#error');
@@ -61,10 +69,4 @@ $(() => {
       $('.counter').text(140);
     });
   });
-  const loadTweets = () => {
-    $.get('/tweets', (tweets) => {
-      renderTweets(tweets);
-    });
-  };
-
 }); 

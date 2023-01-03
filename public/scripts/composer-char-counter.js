@@ -1,5 +1,5 @@
 $(() => {
-  $('#tweet-text').on('keyup', function() {
+  $('#tweet-text').on('input', function() {
     let count = $('.counter');
     let newCount = 140 - $(this).val().length;
     count.text(newCount);
