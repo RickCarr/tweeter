@@ -26,13 +26,13 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweetContainer.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
   </head>
   <body>
     <nav>
      <span class="logo">Tweeter</span>
-     <div class="writeTweet"><strong>Write</strong> a new tweet
+     <div class="write-tweet"><strong>Write</strong> a new tweet
        <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
@@ -49,18 +49,18 @@
 
     <main class="container">
      <section class="new-tweet">
-        <form id="composeTweet">
-         <div class="errorContainer">
+        <form id="compose-tweet">
+         <div class="error-container">
            <div id="error"></div>
          </div>
          <textarea name="text" id="tweet-text" placeholder="What you chirp'n about?"></textarea>
          <div>
-           <button class='tweetButton' type="submit">Tweet</button>
+           <button class='tweet-button' type="submit">Tweet</button>
            <output name="counter" class="counter" for="tweet-text">140</output>
          </div>
        </form>
      </section>
-     <section class="tweetContainer"></section>
+     <section class="tweet-container"></section>
     </main>
 
     <footer>

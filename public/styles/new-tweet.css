@@ -1,10 +1,10 @@
-.tweetButton {
+.tweet-button {
 font-family: 'Bungee', sans-serif;
 color: #FFFFFF;
 background-color: #4056A1;
 }
 
-.tweetButton:hover {
+.tweet-button:hover {
   box-shadow: 4px 4px 4px #4056A1;
 }
 
@@ -27,11 +27,11 @@ background-color: #4056A1;
   font-family: 'Bungee', sans-serif;
 }
 
-.turningRed {
+.turning-red {
   color: crimson;
 }
 
-.errorContainer {
+.error-container {
 display: flex;
 justify-content: center;
 }

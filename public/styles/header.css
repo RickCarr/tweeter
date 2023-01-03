@@ -10,10 +10,11 @@
   background-color: black;
   background-image: url('../images/foggy-birds.png');
 }
+
 .header div img{
   margin-top: 20px;
-
 }
+
 .yourName {
   font-size: 25px;
   font-family: 'Source Sans Pro', san-serif;

@@ -1,4 +1,4 @@
-const createTweetElement = (tweetData) => {  
+const createTweetElement = (tweetData) => {
   const escape = (str) => {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -30,7 +30,7 @@ const createTweetElement = (tweetData) => {
 };
 
 const renderTweets = (tweets) => {
-  const $tweetSection = $('.tweetContainer');
+  const $tweetSection = $('.tweet-container');
   $tweetSection.empty();
   for (let tweet of tweets) {
     const $userTweet = createTweetElement(tweet);
@@ -39,23 +39,32 @@ const renderTweets = (tweets) => {
 };
 
 const loadTweets = () => {
-  $.get('/tweets', (tweets) => {
-    renderTweets(tweets);
-  });
+  try {
+    $.get('/tweets', (tweets) => {
+      renderTweets(tweets);
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 $(() => {
+  // loads tweets upon doc ready
   loadTweets();
-  const $chirp = $('#composeTweet');
+  // validates tweet submission
+  const $chirp = $('#compose-tweet');
   $chirp.submit((event) => {
     const error = $('#error');
     event.preventDefault();
+
     const chirpMsg = $('#tweet-text').val().trim();
+    // returns error if submission is empty
     if (!chirpMsg) {
       error.addClass("error");
       error.text(" ⚠ If you ain't typing, you ain't chirp'n! ⚠ ");
       return error.slideDown();
     }
+    // returns error if submission is too long
     if (chirpMsg.length > 140) {
       error.addClass("error");
       error.text(" ⚠ Whoa there, Kanye! Please keep your rant below 140 characters. ⚠ ");
@@ -63,10 +72,15 @@ $(() => {
     } else {
       error.slideUp();
     }
+    // posts submission if no errors
     $.post('/tweets', $chirp.serialize(), (response) => {
-      loadTweets(response);
-      $('#tweet-text').val("");
-      $('.counter').text(140);
+      try {
+        loadTweets(response);
+        $('#tweet-text').val("");
+        $('.counter').text(140);
+      } catch (error) {
+        console.error(error);
+      }
     });
   });
 }); 
